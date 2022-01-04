@@ -57,3 +57,50 @@ Q) Which are legal:
       } catch (var ex) {
       }
    }
+
+Q) Which are legal
+   A)
+      for (var x = 0; x < 3; x++)
+        System.out.println(x);
+   B)
+      try (var in = new FileReader("");
+           var out = new FileWriter("")) {
+      }
+   C)
+      var var = "var";
+
+Q)   Which print "true"
+   A) String s = "Hello";
+      String t = "He";
+      t += "llo";
+      sout(s == t);
+   B) String s = "Hello";
+      String t = "He";
+      t += "llo";
+      sout(s.equals(t));
+   C) StringBuilder s = new StringBuilder("Hello");
+      StringBuilder t = new StringBuilder("He");
+      t.append("llo");
+      sout(s.equals(t));
+   D) List<String> ls = List.of("Fred", "Jim");
+      List<String> ls2 = new ArrayList<>(ls);
+      sout(ls.equals(ls2));
+   E) LocalDate ld = LocalDate.of(2021, 3, 29);
+      LocalDate ld2 = LocalDate.of(2021, 3, 29);
+      sout(ld.equals(ld2));
+
+Q)
+Given:
+class X {
+  static String h = "Hello";
+}
+and:
+     String s1 = "Hello";
+     String s2 = new StringBuilder("Hello").toString();
+     String s3 = s2.intern();
+
+Which are true?
+A) s1 == s2
+B) s2 == s3
+C) s1 == s3
+D) X.h == s1
