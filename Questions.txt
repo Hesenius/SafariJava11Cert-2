@@ -104,3 +104,58 @@ A) s1 == s2
 B) s2 == s3
 C) s1 == s3
 D) X.h == s1
+
+Q) Which are valid?
+     A) int x = 99; while (x) {}
+     B) int x = 99; switch (x) {}
+     C) enum Day { MONDAY; }
+   ...
+     Day x = Day.MONDAY;
+   switch (x) {
+       case MONDAY:
+     }
+     D) enum Day { MONDAY; }
+   ...
+     Day x = Day.MONDAY;
+   switch (x) {
+       case Day.MONDAY:
+     }
+     E) long count = 99;
+   switch (count) {}
+
+Q) Given
+     void doStuff() throws IOException {};
+     void doStuff2() throws FileNotFoundException {};
+   And:
+     void tryStuff() {
+       try {
+         doStuff();
+         doStuff2();
+       } enter code here { // handle both exceptions
+       }
+     }
+   What can be inserted at "enter code here"
+   to provide handling of exceptions from both
+   methods?
+A) catch (IOException | FileNotFoundException e)
+B) catch (FileNotFoundException | IOException e)
+C) catch (FileNotFoundException e)
+D) catch (IOException e)
+E) finally
+
+Q) Given class AC implements AutoCloseable {
+     private String name; // constructor initializes name
+     public void close() { System.out.println("Closing " + name); } }
+And:
+       var ac0 = new AC("zero");
+       try ( var ac1 = new AC("one");
+           var ac2 = new AC("two");
+           ac0;){
+       }
+     }
+What is the result?
+   A) Compilation fails
+   B) Closing zero Closing two Closing one
+   C) Closing zero Closing one Closing two
+   D) Closing two Closing one Closing zero
+   E) Closing one Closing two Closing zero
