@@ -16,3 +16,44 @@ D) {
 E) for (int x = 0; x < 10; x++)
      ;
     int x;
+
+Q) Which are legal:
+   A) class X {
+     var x = 99;
+   }
+
+   B) void doStuff(var x) { }
+
+   C) void doStuff() {
+     var x;
+     x = 100;
+   }
+   D) void doStuff() {
+     var x = 100;
+   }
+
+   E) void doStuff() {
+     var x = { 1, 2, 3 };
+   }
+
+Q) Which are legal:
+   A) void doStuff() {
+     var x = new int[]{ 1, 2, 3 };
+   }
+   B) void doStuff() {
+     var [] x = new int[]{ 1, 2, 3 };
+   }
+   C) void doStuff() {
+     var x = 99;
+     x = "Hello";
+   }
+   D) void doStuff() {
+     var x = 1, y = 2;
+   }
+   E)
+   void doStuff() {
+     try {
+      // stuff happens
+      } catch (var ex) {
+      }
+   }

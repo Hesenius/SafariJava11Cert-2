@@ -1,5 +1,7 @@
 package scope;
 
+import java.util.function.Predicate;
+
 public class Ex1 {
   //  public static void main(String[] args) {
 //    {
@@ -11,7 +13,7 @@ public class Ex1 {
 //  }
 
 //  class X {
-//    /*void doStuff() */ {
+//    /*void doStuff()*/ {
 //      System.out.println(x); // works as this.x!!!
 //    }
 //    int x;
@@ -22,11 +24,22 @@ public class Ex1 {
 //    { int x; }
 //  }
 
-//  D) {
+//  void doStuff() {
+////    Predicate<String> ps = (String x) -> true;
+////    Predicate<String> ps = (String x) -> { return true; };
 //    int x;
 //    Predicate<String> ps = x -> true;
+////    Predicate<String> ps = new Predicate<String>() {
+////      @Override
+////      public boolean test(String x) { // this works!
+////        return false;
+////      }
+////    };
 //  }
-//  E) for (int x = 0; x < 10; x++)
-//  ;
-//  int x;
+
+//  void doStuff() {
+//    for (int x = 0; x < 10; x++)
+//    ;
+//    int x;
+//  }
 }
