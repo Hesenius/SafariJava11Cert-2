@@ -1,0 +1,18 @@
+Q) Which are legal:
+A) { int x; }
+   { int x; }
+B) class X {
+     { sout(x); } // sout means System.out.println ...
+     int x;
+   }
+C) {
+     int x;
+     { int x; }
+   }
+D) {
+     int x;
+     Predicate<String> ps = x -> true;
+   }
+E) for (int x = 0; x < 10; x++)
+     ;
+    int x;
