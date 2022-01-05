@@ -305,3 +305,93 @@ x is 99
 y is 300
 y is 101
 x is 200
+
+Q) Given:
+interface Int1 {
+ default void doStuff() {
+   System.out.println("Int1.doStuff()");
+ }
+}
+class Cl1 implements Int1 {
+ void doStuff() {
+   System.out.println("Cl1.doStuff");
+ }
+}
+What is the result of a call:
+new Cl1().doStuff();
+A) Compilation fails
+B) RuntimeException
+C) Int1.doStuff()
+D) Cl1.doStuff()
+E) Int1.doStuff()
+   Cl1.doStuff()
+
+Q) Given:
+   interface Int1 {
+     default void doStuff() {  System.out.println("Int1.doStuff()"); }
+   }
+   class Cl2 implements Int1 {
+     public void doStuff() { System.out.println("Cl2.doStuff"); }
+   }
+What is the result of a call:
+   public class Q2 {
+     public static void main(String[] args) {
+       new Cl2().doStuff();
+     }
+   }
+
+A) Compilation fails
+B) RuntimeException
+C) Int1.doStuff()
+D) Cl2.doStuff()
+E) Int1.doStuff()
+   Cl2.doStuff()
+
+Q) Given:
+interface IntX {
+ default void doStuff() { System.out.println("IntX.doStuff()"); }
+}
+interface IntY {
+ default void doStuff() { System.out.println("IntY.doStuff()"); }
+}
+class ClQ implements IntX, IntY {
+}
+What is the result of a call:
+   new ClQ().doStuff();
+A) Compilation fails
+B) RuntimeException
+C) IntX.doStuff()
+D) IntY.doStuff()
+E) C1QdoStuff()
+
+Q) Given:
+enum Day {
+    MONDAY(1), TUESDAY;
+    public Day(int d) {}
+    public Day() {}
+}
+and:
+sout(Day.MONDAY);
+
+What is the result?
+A) 1
+B) MONDAY
+C) Day.MONDAY
+D) Exception at runtime
+E) Compilation fails
+
+Q) Given:
+class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+}
+class Sub extends Base {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+}
+
+In the Base and Sub classes, which are true in isolation?
+A) doBaseStuff in Base can be marked throws Exception without causing errors
+B) doBaseStuff in Base can be marked throws RuntimeException without causing errors
+C) doBaseStuff in Sub can be marked throws Exception without causing errors
+D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
+E) if doBaseStuff in Base were marked throws Exception,
+   then doBaseStuff in Sub can be marked throws IOException without causing errors
