@@ -159,3 +159,44 @@ What is the result?
    C) Closing zero Closing one Closing two
    D) Closing two Closing one Closing zero
    E) Closing one Closing two Closing zero
+
+Q) Given
+     void doStuff(int x, int y) {}         // Method A
+     void doStuff(int x, long y) {}        // Method B
+     void doStuff(long x, int y) {}        // Method C
+     void doStuff(int ... x) {}            // Method D
+     void doStuff(Integer x, Integer y) {} // Method E
+
+which method will be invoked by this call:
+       doStuff(1, 2);
+
+Q) Given
+     void doStuff(int x, int y) {}         // Method A
+     void doStuff(int x, long y) {}        // Method B
+     void doStuff(long x, int y) {}        // Method C
+     void doStuff(int ... x) {}            // Method D
+     void doStuff(Integer x, Integer y) {} // Method E
+
+if method A is removed, what is the result of this call:
+       doStuff(1, 2);
+
+A) Compilation fails
+B) method B is invoked
+C) method C is invoked
+D) method D is invoked
+E) method E is invoked
+
+Q) Given
+     void doStuff(int x, int y) {}         // Method A
+     void doStuff(int x, long y) {}        // Method B
+     void doStuff(long x, int y) {}        // Method C
+     void doStuff(int ... x) {}            // Method D
+     void doStuff(Integer x, Integer y) {} // Method E
+
+if methods A, B, and C are removed, what is the result of this call:
+       doStuff(1, 2);
+
+A) Compilation fails
+D) method D is invoked
+E) method E is invoked
+
