@@ -268,3 +268,40 @@ Q) Given:
    C) x is 99
       in constructor, x is 99
    D) Compilation fails
+
+Q) class Parent {
+Parent(int x) { y += x; }
+ static { System.out.println("x is " + Parent.x); }
+ static int x = 99;
+ int y = 100;
+ { y++; System.out.println("y is " + y); }
+}
+class Child extends Parent {
+ int x = 200;
+ static int y = 300;
+ Child() { super(x); }
+ Child(int x) { this(); }
+ { System.out.println("x is " + x); }
+ static { System.out.println("y is " + y); }
+}
+and:
+       System.out.println("Hello!");
+       new Child(-1);
+What is the result?
+A) Compilation fails
+B) Exception at runtime
+C) Hello!
+x is 0
+y is 300
+y is 101
+x is 200
+D)x is 0
+y is 300
+y is 101
+x is 200
+Hello!
+E) Hello!
+x is 99
+y is 300
+y is 101
+x is 200
