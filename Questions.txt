@@ -200,3 +200,71 @@ A) Compilation fails
 D) method D is invoked
 E) method E is invoked
 
+Q) Given:
+  public static void funct(int x) {
+    x = x + 1;
+  }
+and:
+  public static void main(String[] args) {
+    int x = 99;
+    funct(x);
+    System.out.println(x);
+  }
+
+What is the result?
+  A) 99
+  B) 100
+  C) An error
+
+Q) Given:
+  public static void q12A(StringBuilder x) {
+    x.append(" world");
+  }
+
+and:
+  public static void main(String[] args) {
+    StringBuilder x = new StringBuilder("Hello");
+    q12A(x);
+    System.out.println(x);
+  }
+
+  What is the result?
+  A) Hello
+  B) Hello world
+  C)  world
+  D) An error
+
+Q) Given:
+    public static void q14A(Integer x) {
+      x = x + 1;
+    }
+and:
+    public static void main(String[] args) {
+      Integer x = 99;
+      q14A(x);
+      System.out.println(x);
+    }
+
+    What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+Q) Given:
+     class Q25Base {
+       int x = 99;
+       { System.out.println("x is " + x); }
+     }
+     class Q25Sub extends Q25Base {
+       Q25Sub(int x) { System.out.println("in constructor, x is " + x); }
+       public static void go() { new Q25Sub(1); }
+     }
+
+   Given a call to go(), what is the result?
+   A) in constructor, x is 1
+      x is 99
+   B) x is 99
+      in constructor, x is 1
+   C) x is 99
+      in constructor, x is 99
+   D) Compilation fails
