@@ -412,3 +412,80 @@ class Base {
  C) doBaseStuff in Sub can be marked public without causing errors
  D) doBaseStuff in Sub can be marked protected without causing errors
  E) doBaseStuff in Sub can be marked private without causing errors
+
+Q) Given
+ class Base2 {
+   void doBaseStuff() {
+     System.out.println("doBaseStuff");
+   }
+ }
+ class Sub2 extends Base2 {
+   void doBaseStuff(int x) {
+     System.out.println("doSubStuff");
+   }
+ }
+In the Base and Sub classes, which are true in isolation?
+A) doBaseStuff in Base can be marked throws Exception without causing errors
+B) doBaseStuff in Base can be marked throws RuntimeException without causing errors
+C) doBaseStuff in Sub can be marked throws Exception without causing errors
+D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
+E) if doBaseStuff in Base were marked throws Exception,
+  then doBaseStuff in Sub can be marked throws IOException without causing errors
+
+Q) Given:
+     public int getValue() {
+       return 1;
+     }
+
+ Which of these methods may individually be added to a subclass of this class?
+ A) public int getValue(int x) {return 1;}
+ B) public String getValue() {return "Hello";}
+ C) public String getValue(int x) {return "Hello";}
+
+Q) Given:
+ class Q24Base {
+   public int get() {
+     return 0;
+   }
+ }
+
+ class Q24Sub extends Q24Base {}
+
+ Which methods may individually be added to this class?
+ A) public long get() { return 1; }
+ B) public short get() { return 1; }
+ C) public Q24Base get() { return null; }
+ D) None of these
+
+Q) Given:
+ class Q23Base {
+   public Q23Base get() {
+     return null;
+   }
+ }
+
+ class Q23Sub extends Q23Base {
+ }
+
+Which methods may individually be added to this class?
+
+A) public Q23Base get() { return null; }
+B) public Q23Sub get() { return null; }
+C) public Runnable get() { return null; }
+
+Q) Given:
+interface StudentCriterion {
+   boolean test(Student s);
+}
+and:
+class Student {
+   public int getGpa() { return 0; }
+   public List<String> getCourses() { return null; }
+}
+
+Which are legal (individually):
+A) StudentCriterion sc = Student s -> { return s.getGpa() > 3;};
+B) StudentCriterion sc = s -> { s.getGpa() > 3 };
+C) Object sc = s -> {return s.getGpa() > 3;};
+D) StudentCriterion sc = (s) -> s.getGpa() > 3;
+E) StudentCriterion sc = s -> s.getCourses().size();
