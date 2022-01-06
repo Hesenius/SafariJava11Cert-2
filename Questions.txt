@@ -489,3 +489,46 @@ B) StudentCriterion sc = s -> { s.getGpa() > 3 };
 C) Object sc = s -> {return s.getGpa() > 3;};
 D) StudentCriterion sc = (s) -> s.getGpa() > 3;
 E) StudentCriterion sc = s -> s.getCourses().size();
+
+Q) Which are legal individually:
+ A) Function<String, String> fss = s -> { System.out.println(s); };
+ B) Consumer<String> cs = s -> { System.out.println(s); };
+ C) Supplier<String> ss = (s1, s2) -> s1 + s2;
+ D) BiPredicate<String> bps = (String s) -> { return s.length() > 0; };
+ E) ToIntFunction<String> tofs = s -> s.length();
+
+Q) Given:
+StringBuilder sb1 = new StringBuilder("Hello");
+StringBuilder sb2 = sb1;
+sb1 = null;
+
+Which is true?
+A) sb1 is unreferenced and eligible for GC
+B) sb1 and sb2 are unreferenced and eligible for GC
+C) No objects are eligible for GC
+
+Q) Given:
+StringBuilder sb1 = new StringBuilder("Hello");
+StringBuilder sb2 = new StringBuilder("World");
+sb1 = null;
+sb2 = sb1;
+
+Which is true?
+A) Object containing "Hello" is unreferenced and eligible for GC
+B) Object containing "World" is unreferenced and eligible for GC
+C) Object containing "Hello", and "World" are both unreferenced and eligible for GC
+D) No objects are eligible for GC
+
+Q) Which are valid annotation declarations?
+   A) @interface Annot {}
+   B) @ interface Annot {
+        String value() = "";
+      }
+   C) @interface Annot {
+        StringBuilder text();
+      }
+   D) @interface Annot {
+        Class value();
+      }
+   E) @Retention(RetentionPolicy.CLASS)
+      @interface Annot {}

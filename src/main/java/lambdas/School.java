@@ -5,8 +5,10 @@ import java.util.List;
 
 // This MUST be an INTERFACE
 // IT MUST HAVE ONE abstract method
+@FunctionalInterface
 interface StudentCriterion {
   boolean test(Student s);
+//  void doStuff();
 }
 
 class SmartCriterion implements StudentCriterion {
@@ -25,6 +27,10 @@ class Student {
 }
 
 public class School {
+  static void doStuff(StudentCriterion sc) {}
+  static StudentCriterion doStuff() {
+    return s -> s.getGpa() < 2;
+  }
   public static void main(String[] args) {
 
 //    StudentCriterion mySelection = new SmartCriterion();
@@ -52,6 +58,9 @@ public class School {
       System.out.println(m);
     }
 //    mySelection.test(null);
+
+    doStuff(s -> s.getCourses().size() > 3);
+    Object obj = (StudentCriterion)s -> s.getCourses().size() > 3;
 
   }
 
